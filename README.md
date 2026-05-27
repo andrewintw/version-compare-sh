@@ -44,7 +44,7 @@ version_compare "$CURRENT_VER" "$TARGET_VER"
 case $? in
     0) echo "版本相同"; exit 0 ;;
     1) echo "降級拒絕"; exit 1 ;;
-    2) echo "允許升級"; ./do_upgrade ;;
+    2) echo "允許升級"; do_upgrade ;;
 esac
 ```
 
@@ -52,7 +52,7 @@ esac
 ## 測試與整合
 
 ```text
-./vercomp_test.sh test_case.txt 
+$ ./vercomp_test.sh test_case.txt 
 =====================================================
  Reading test_case.txt line by line for verification...
 =====================================================
