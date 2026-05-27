@@ -15,9 +15,9 @@
 
 ```text
 version-compare-sh/
-├── vercomp.sh          # 正式發布核心（純淨函式庫，僅包含 version_compare 函式）
-├── vercomp_test.sh     # 自動化測試管線腳本（一列一列讀取測試資料並驗證）
-└── test_case.txt       # 測試測項資料庫（存放各種版本比對的邊界條件案例）
+├── vercomp.sh          # 函式庫，僅包含 version_compare() 函式
+├── vercomp_test.sh     # 自動化測試腳本（一列一列讀取測試資料並驗證）
+└── test_case.txt       # 測試測項資料庫（可自行新增 Test Case）
 ```
 
 ## 回傳值規範 (API)
