@@ -24,13 +24,13 @@ version-compare-sh/
 
 Usage: `version_compare "v_old" "v_new"`
 
-> $1 (v_old)：目前設備上正在跑的舊版（現行版）
-> $2 (v_new)：下載下來準備要刷進去的新版（目標版）
+* $v_old：目前設備上正在跑的舊版（現行版）
+* $v_new：下載下來準備要刷進去的新版（目標版）
 
 呼叫後的狀態碼：
 
 * `0`：（v_new = v_old）兩版本相同 => 通常不更新
-* `1`：（v_old > v_new）v_new 比 v_old 小(舊版) => 通常不更新
+* `1`：（v_old > v_new）v_new 比 v_old 小(舊版) => 不更新
 * `2`：（v_old < v_new）v_new 比 v_old 大(新版) => 進行更新
 
 
