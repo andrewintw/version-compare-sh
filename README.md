@@ -22,7 +22,12 @@ version-compare-sh/
 
 ## 回傳值規範 (API)
 
-呼叫 version_compare "v_old" "v_new" 後的狀態碼：
+Usage: `version_compare "v_old" "v_new"`
+
+> $1 (v_old)：目前設備上正在跑的舊版（現行版）
+> $2 (v_new)：下載下來準備要刷進去的新版（目標版）
+
+呼叫後的狀態碼：
 
 * `0`：（v_new = v_old）兩版本相同 => 通常不更新
 * `1`：（v_old > v_new）v_new 比 v_old 小(舊版) => 通常不更新
@@ -37,16 +42,16 @@ version-compare-sh/
 
 version_compare "$CURRENT_VER" "$TARGET_VER"
 case $? in
+    0) echo "版本相同"; exit 0 ;;
     1) echo "降級拒絕"; exit 1 ;;
     2) echo "允許升級"; ./do_upgrade ;;
-    0) echo "版本相同"; exit 0 ;;
 esac
 ```
 
 
 ## 測試與整合
 
-```bash
+```text
 ./vercomp_test.sh test_case.txt 
 =====================================================
  Reading test_case.txt line by line for verification...
